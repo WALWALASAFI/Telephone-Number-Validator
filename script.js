@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const clearBtn = document.getElementById('clear-btn');
   const resultsDiv = document.getElementById('results-div');
 
-  checkBtn.addEventListener('click', function() {
+  // Use arrow function for event listener
+  checkBtn.addEventListener('click', () => {
     const phoneNumber = userInput.value.trim();
 
     if (phoneNumber === '') {
@@ -16,11 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  clearBtn.addEventListener('click', function() {
+  // Use arrow function for event listener
+  clearBtn.addEventListener('click', () => {
     resultsDiv.textContent = '';
     userInput.value = '';
   });
 
+  // Define function before using it
   function isValidUSPhoneNumber(phoneNumber) {
     // Regular expression for US phone number validation
     const regex = /^(1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s\-]?[0-9]{3}[\s\-]?[0-9]{4}$/;

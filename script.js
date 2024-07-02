@@ -4,19 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearBtn = document.getElementById('clear-btn');
   const resultsDiv = document.getElementById('results-div');
 
-  // Define function before using it to avoid no-use-before-define error
+  // Define function to display messages before using it
+  function displayMessage(message) {
+    resultsDiv.textContent = message;
+  }
+
+  // Define function for phone number validation
   function isValidUSPhoneNumber(phoneNumber) {
     // Regular expression for US phone number validation
     const regex = /^(1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s-]?[0-9]{3}[\s-]?[0-9]{4}$/;
     return regex.test(phoneNumber);
   }
 
-  // Use arrow function for event listener
+  // Event listener for check button
   checkBtn.addEventListener('click', () => {
     const phoneNumber = userInput.value.trim();
 
     if (phoneNumber === '') {
-      displayMessage('Please provide a phone number'); // Using a function to display messages instead of alert
+      displayMessage('Please provide a phone number');
     } else if (isValidUSPhoneNumber(phoneNumber)) {
       displayMessage(`Valid US number: ${phoneNumber}`);
     } else {
@@ -24,14 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Use arrow function for event listener
+  // Event listener for clear button
   clearBtn.addEventListener('click', () => {
     resultsDiv.textContent = '';
     userInput.value = '';
   });
-
-  // Function to display messages in resultsDiv
-  function displayMessage(message) {
-    resultsDiv.textContent = message;
-  }
 });

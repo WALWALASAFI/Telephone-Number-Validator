@@ -4,16 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearBtn = document.getElementById('clear-btn');
   const resultsDiv = document.getElementById('results-div');
 
+  // Define function before using it to avoid no-use-before-define error
+  function isValidUSPhoneNumber(phoneNumber) {
+    // Regular expression for US phone number validation
+    const regex = /^(1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s-]?[0-9]{3}[\s-]?[0-9]{4}$/;
+    return regex.test(phoneNumber);
+  }
+
   // Use arrow function for event listener
   checkBtn.addEventListener('click', () => {
     const phoneNumber = userInput.value.trim();
 
     if (phoneNumber === '') {
-      alert('Please provide a phone number'); // Consider using a more user-friendly notification method
+      displayMessage('Please provide a phone number'); // Using a function to display messages instead of alert
     } else if (isValidUSPhoneNumber(phoneNumber)) {
-      resultsDiv.textContent = `Valid US number: ${phoneNumber}`;
+      displayMessage(`Valid US number: ${phoneNumber}`);
     } else {
-      resultsDiv.textContent = `Invalid US number: ${phoneNumber}`;
+      displayMessage(`Invalid US number: ${phoneNumber}`);
     }
   });
 
@@ -23,10 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     userInput.value = '';
   });
 
-  // Define function before using it to avoid no-use-before-define error
-  function isValidUSPhoneNumber(phoneNumber) {
-    // Regular expression for US phone number validation
-    const regex = /^(1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s-]?[0-9]{3}[\s-]?[0-9]{4}$/;
-    return regex.test(phoneNumber);
+  // Function to display messages in resultsDiv
+  function displayMessage(message) {
+    resultsDiv.textContent = message;
   }
 });

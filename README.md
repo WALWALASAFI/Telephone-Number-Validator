@@ -4,11 +4,11 @@ A telephone number validator is a tool or form designed to verify whether a give
 
 By implementing a telephone number validator, websites can enhance data quality and user experience by ensuring accurate and properly formatted phone numbers are collected.
 
-✔👌Demo link(https://walwalasafi.github.io/Roman-Numeral-convertor/)
+✔👌Demo (linkhttps://walwalasafi.github.io/Telephone-Number-Validator/)
 
 
 Demo 📸
-![image](image/image.jpg)
+![image](image/pic.jpg)
 
 Technologies Used 🛠️
 🔹HTML

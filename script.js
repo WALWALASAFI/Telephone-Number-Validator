@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const phoneNumber = userInput.value.trim();
 
     if (phoneNumber === '') {
-      displayMessage('Please provide a phone number');
+      alert('Please provide a phone number');
     } else if (isValidUSPhoneNumber(phoneNumber)) {
       displayMessage(`Valid US number: ${phoneNumber}`);
     } else {

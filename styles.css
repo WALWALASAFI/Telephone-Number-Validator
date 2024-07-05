@@ -115,3 +115,14 @@ label {
   text-align: var(--center-text);
   color: #31272b;
 }
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .phone-container {
+    padding: 10px;
+  }
+
+  .phone-background {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+}

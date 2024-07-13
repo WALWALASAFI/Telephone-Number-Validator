@@ -30,9 +30,8 @@ h1 {
   color: white;
   width: 100%;
   max-width: 480px;
-  margin: 15px 0;
+  margin: 15px auto;
   text-align: var(--center-text);
-  margin-left: 30%;
 }
 
 .phone-container {
@@ -116,13 +115,26 @@ label {
   color: #31272b;
 }
 
-/* Responsive styles */
 @media only screen and (max-width: 600px) {
-  .phone-container {
+  body {
     padding: 10px;
   }
 
-  .phone-background {
-    height: 200px; /* Adjust height for smaller screens */
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #user-input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #results-div {
+    height: 200px;
+  }
+
+  .btn-styles {
+    width: 80px;
+    font-size: 16px;
   }
 }
